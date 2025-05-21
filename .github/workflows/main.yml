@@ -1,32 +1,35 @@
-name: Firs test Action
+name: Draw Tree in PowerShell
 
-on:  
-  workflow_dispatch:
+on:
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
 
 jobs:
   draw-tree:
-  runs-on: windows-latest
-  name: Firs test Action
+    runs-on: windows-latest
+						
 
-steps:
-  -name: Powershell Script
-  shell: pwsh 
-  run: |
- 
-$height = 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+		
+							  
+			
 
-# Draw leafs
-for ($i = 1; $i -le $height; $i++) {
-    $spaces = ' ' * ($height - $i)
-    $stars = '*' * (2 * $i - 1)
-    Write-Host "$spaces$stars"
-}
+      - name: Run PowerShell tree script
+        shell: pwsh
+        run: |
+          $height = 10
+          for ($i = 1; $i -le $height; $i++) {
+              $spaces = ' ' * ($height - $i)
+              $stars = '*' * (2 * $i - 1)
+              Write-Host "$spaces$stars"
+          }
 
-# Root
-$trunkWidth = 3
-$trunkHeight = 2
-$trunkSpace = ' ' * ($height - [math]::Ceiling($trunkWidth / 2))
+	  
+          $trunkWidth = 3
+          $trunkHeight = 2
+          $trunkSpace = ' ' * ($height - [math]::Ceiling($trunkWidth / 2))
 
-for ($j = 1; $j -le $trunkHeight; $j++) {
-    Write-Host "$trunkSpace" + ('*' * $trunkWidth)
-}
+          for ($j = 1; $j -le $trunkHeight; $j++) {
+              Write-Host "$trunkSpace" + ('*' * $trunkWidth)
+          }
