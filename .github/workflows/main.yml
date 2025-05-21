@@ -1,6 +1,7 @@
 name: Firs test Action
 
-on:   workflow_dispatch:
+on:  
+  workflow_dispatch
 jobs:
   draw-tree:
   runs-on: windows-latest
