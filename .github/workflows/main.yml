@@ -1,12 +1,15 @@
 name: Firs test Action
 
 on:  
-  workflow_dispatch
+  workflow_dispatch:
+
 jobs:
   draw-tree:
   runs-on: windows-latest
   name: Firs test Action
 
+shell: powershell 
+run:
   # Set the height of the tree
 $height = 10
 
