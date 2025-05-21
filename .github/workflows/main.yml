@@ -6,14 +6,10 @@ on:
 jobs:
   draw-tree:
     runs-on: windows-latest
-						
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-		
-							  
-			
 
       - name: Run PowerShell tree script
         shell: pwsh
@@ -25,7 +21,6 @@ jobs:
               Write-Host "$spaces$stars"
           }
 
-	  
           $trunkWidth = 3
           $trunkHeight = 2
           $trunkSpace = ' ' * ($height - [math]::Ceiling($trunkWidth / 2))
