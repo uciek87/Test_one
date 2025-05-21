@@ -8,11 +8,11 @@ jobs:
     runs-on: windows-latest
 
   steps:
-     - name: Checkout code
-    	 uses: actions/checkout@v4
+  - name: Checkout code
+  uses: actions/checkout@v4
      
-    - name: Install PowerShell
-      run: sudo apt-get install -y powershell
+  - name: Install PowerShell
+  run: sudo apt-get install -y powershell
 
     -name: Run_PowerShell_tree_script
     shell: pwsh
