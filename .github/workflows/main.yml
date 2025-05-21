@@ -9,7 +9,7 @@ jobs:
   name: Firs test Action
 
 -name: Powershell Script
-shell: powershell 
+shell: pwsh 
 run: |
   # Set the height of the tree
 $height = 10
