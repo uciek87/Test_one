@@ -1,7 +1,6 @@
 name: First Action
 
 on:
-draw-tree:
   workflow_dispatch: 
 
 jobs:
@@ -10,9 +9,8 @@ jobs:
 
     steps:
     
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
     - name: Run PowerShell tree script
     shell: pwsh
