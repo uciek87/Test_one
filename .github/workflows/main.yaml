@@ -4,16 +4,16 @@ on:
   workflow_dispatch: 
 
 jobs:
-  drawtree:
-    runs-on: windows-latest
+ drawtree:
+  runs-on: windows-latest
 
   steps:
-  - name: Checkout code
-  uses: actions/checkout@v4
-     
-  - name: Install PowerShell
-  run: sudo apt-get install -y powershell
-
-    -name: Run_PowerShell_tree_script
+  - name: 'Checkout code'
+    uses: actions/checkout@v4
+  
+  - name: 'Install PowerShell'
+    run: sudo apt-get install -y powershell
+    
+  - name: 'Run_PowerShell_tree_script'
     shell: pwsh
-     run: ./tree.ps1
+    run: ./tree.ps1
