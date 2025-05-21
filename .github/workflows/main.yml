@@ -9,6 +9,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
     - name: Run PowerShell tree script
     shell: pwsh
-      run: ./workflows/tree.ps1
+      run: ./tree.ps1
