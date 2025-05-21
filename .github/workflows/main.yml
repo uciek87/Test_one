@@ -1,14 +1,14 @@
-name: Draw Tree in PowerShell
+name: First Action
 
 on:
-  workflow_dispatch:  # Allows manual trigger from GitHub UI
+draw-tree:
+  workflow_dispatch: 
 
 jobs:
   drawtree:
     runs-on: windows-latest
 
     steps:
-    
-      - name: Run PowerShell tree script
-        shell: pwsh
-        run: ./tree.ps1
+    - name: Run PowerShell tree script
+    shell: pwsh
+      run: ./workflows/tree.ps1
