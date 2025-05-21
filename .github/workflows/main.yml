@@ -12,7 +12,7 @@ steps:
   -name: Powershell Script
   shell: pwsh 
   run: |
-  # Set the height of the tree
+ 
 $height = 10
 
 # Draw leafs
